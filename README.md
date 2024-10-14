@@ -1,0 +1,1 @@
+# sfguide-distributed-training-using-pytorch-object-detection-in-snowflake-notebooks
