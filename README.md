@@ -1,4 +1,4 @@
-# Distributed training using Pytorch Object detection in Snowflake Notebooks
+# Distributed Model Training using Pytorch Object detection in Snowflake Notebooks
 
 ## Overview
 
