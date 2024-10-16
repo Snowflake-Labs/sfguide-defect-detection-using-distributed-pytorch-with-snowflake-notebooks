@@ -1,4 +1,4 @@
-# Distributed Model Training using Pytorch Object detection in Snowflake Notebooks
+# Defect detection using distributed PyTorch with Snowflake Notebooks
 
 ## Overview
 
