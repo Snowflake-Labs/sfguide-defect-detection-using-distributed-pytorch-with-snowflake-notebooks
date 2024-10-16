@@ -1,4 +1,4 @@
-# Defect detection using distributed PyTorch with Snowflake Notebooks
+# Defect detection using Distributed PyTorch with Snowflake Notebooks
 
 ## Overview
 
