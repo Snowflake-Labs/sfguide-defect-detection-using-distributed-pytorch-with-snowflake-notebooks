@@ -242,7 +242,7 @@ CALL DOWNLOAD_YOLO_WEIGHTS();
 -- ============================================================================
 CREATE OR REPLACE NOTEBOOK PCB_DEFECT_DETECTION
     FROM '@PCB_CV_REPO/branches/main'
-    MAIN_FILE = 'notebooks/pcb_defect_detection.ipynb'
+    MAIN_FILE = 'notebooks/0_pcb_defect_detection_yolo.ipynb'
     QUERY_WAREHOUSE = PCB_CV_WH
     COMPUTE_POOL = PCB_CV_COMPUTEPOOL
     RUNTIME_NAME = 'SYSTEM$GPU_RUNTIME'
