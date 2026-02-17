@@ -1,0 +1,11 @@
+name: pcb_defect_dashboard
+channels:
+  - snowflake
+dependencies:
+  - streamlit
+  - pandas
+  - numpy
+  - plotly
+  - altair
+  - pillow
+
