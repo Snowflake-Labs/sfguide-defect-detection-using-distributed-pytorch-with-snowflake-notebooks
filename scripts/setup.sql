@@ -1,3 +1,17 @@
+-- Copyright 2026 Snowflake Inc.
+-- SPDX-License-Identifier: Apache-2.0
+--
+-- Licensed under the Apache License, Version 2.0 (the "License");
+-- you may not use this file except in compliance with the License.
+-- You may obtain a copy of the License at
+--
+--     http://www.apache.org/licenses/LICENSE-2.0
+--
+-- Unless required by applicable law or agreed to in writing, software
+-- distributed under the License is distributed on an "AS IS" BASIS,
+-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-- See the License for the specific language governing permissions and
+-- limitations under the License.
 
 -- ============================================================================
 -- PCB Defect Detection with YOLOv12 - Setup Script
@@ -257,7 +271,7 @@ ALTER NOTEBOOK PCB_DEFECT_DETECTION SET EXTERNAL_ACCESS_INTEGRATIONS = ('allow_a
 -- ============================================================================
 CREATE OR REPLACE STREAMLIT PCB_DEFECT_DETECTION_APP
     FROM '@PCB_CV_REPO/branches/main/streamlit'
-    MAIN_FILE = 'app.py'
+    MAIN_FILE = 'Executive_Overview.py'
     QUERY_WAREHOUSE = PCB_CV_WH
     TITLE = 'PCB Defect Detection'
     COMMENT = '{"origin":"sf_sit-is", "name":"pcb_defect_detection", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"streamlit"}}';
