@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600">
+  <defs>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="600" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700">PCB Defect Detection Architecture</text>
+  
+  <!-- Deep PCB Dataset Box -->
+  <rect x="225" y="50" width="250" height="70" rx="8" fill="url(#cardGrad)" stroke="#f97316" stroke-width="2"/>
+  <text x="350" y="75" text-anchor="middle" fill="#fb923c" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">DEEP PCB DATASET</text>
+  <text x="350" y="95" text-anchor="middle" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="10">@MODEL_STAGE/raw/deeppcb/</text>
+  <text x="350" y="110" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">1,500 images • 6 defect classes</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M350 120 L350 150" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="365" y="140" fill="#60a5fa" font-family="system-ui, -apple-system, sans-serif" font-size="9">GET</text>
+  
+  <!-- Snowflake Notebook Box -->
+  <rect x="100" y="155" width="500" height="160" rx="10" fill="url(#cardGrad)" stroke="#3b82f6" stroke-width="2"/>
+  <text x="350" y="180" text-anchor="middle" fill="#60a5fa" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">SNOWFLAKE NOTEBOOK</text>
+  <text x="350" y="198" text-anchor="middle" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="11">Container Runtime • GPU Compute Pool</text>
+  
+  <!-- Notebook sub-items -->
+  <rect x="120" y="215" width="130" height="60" rx="6" fill="#1e40af" fill-opacity="0.3" stroke="#1e40af" stroke-width="1"/>
+  <text x="185" y="240" text-anchor="middle" fill="#93c5fd" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500">Data Prep</text>
+  <text x="185" y="258" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">Deep PCB → YOLO</text>
+  <text x="185" y="270" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">format conversion</text>
+  
+  <rect x="285" y="215" width="130" height="60" rx="6" fill="#166534" fill-opacity="0.3" stroke="#166534" stroke-width="1"/>
+  <text x="350" y="240" text-anchor="middle" fill="#86efac" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500">YOLOv12 Training</text>
+  <text x="350" y="258" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">GPU_NV_M accelerated</text>
+  <text x="350" y="270" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">50 epochs</text>
+  
+  <rect x="450" y="215" width="130" height="60" rx="6" fill="#7c3aed" fill-opacity="0.3" stroke="#7c3aed" stroke-width="1"/>
+  <text x="515" y="240" text-anchor="middle" fill="#c4b5fd" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500">Model Persist</text>
+  <text x="515" y="258" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">Weights to Stage</text>
+  <text x="515" y="270" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">best.pt (15MB)</text>
+  
+  <!-- External Access badge -->
+  <rect x="120" y="285" width="180" height="22" rx="4" fill="#0891b2" fill-opacity="0.3" stroke="#0891b2" stroke-width="1"/>
+  <text x="210" y="300" text-anchor="middle" fill="#67e8f9" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="500">External Access (GitHub)</text>
+  
+  <!-- Arrow 2 to Model Stage -->
+  <path d="M350 315 L350 350" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="365" y="338" fill="#4ade80" font-family="system-ui, -apple-system, sans-serif" font-size="9">PUT</text>
+  
+  <!-- Model Stage and Tables row -->
+  <rect x="100" y="355" width="230" height="100" rx="10" fill="url(#cardGrad)" stroke="#a855f7" stroke-width="2"/>
+  <text x="215" y="380" text-anchor="middle" fill="#c084fc" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">MODEL_STAGE</text>
+  <rect x="115" y="395" width="200" height="22" rx="4" fill="#6b21a8" fill-opacity="0.3"/>
+  <text x="215" y="410" text-anchor="middle" fill="#d8b4fe" font-family="system-ui, -apple-system, sans-serif" font-size="9">/models/yolov12_pcb/best.pt</text>
+  <text x="215" y="440" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">Trained model weights</text>
+  
+  <rect x="370" y="355" width="230" height="100" rx="10" fill="url(#cardGrad)" stroke="#3b82f6" stroke-width="2"/>
+  <text x="485" y="380" text-anchor="middle" fill="#60a5fa" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600">SNOWFLAKE TABLES</text>
+  
+  <!-- Table badges -->
+  <rect x="385" y="395" width="95" height="22" rx="4" fill="#1e40af"/>
+  <text x="432" y="410" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="500">DEFECT_LOGS</text>
+  
+  <rect x="490" y="395" width="95" height="22" rx="4" fill="#1e40af"/>
+  <text x="537" y="410" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="500">PCB_METADATA</text>
+  
+  <text x="485" y="440" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">Inference results + board tracking</text>
+  
+  <!-- Arrow from Notebook to Tables -->
+  <path d="M450 280 L530 280 L530 350" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="490" y="295" fill="#60a5fa" font-family="system-ui, -apple-system, sans-serif" font-size="9">INSERT</text>
+  
+  <!-- Arrow 3 to Dashboard -->
+  <path d="M350 455 L350 480" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Streamlit Dashboard Box -->
+  <rect x="100" y="485" width="500" height="100" rx="10" fill="url(#cardGrad)" stroke="#22c55e" stroke-width="2"/>
+  <text x="350" y="510" text-anchor="middle" fill="#4ade80" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">STREAMLIT DASHBOARD</text>
+  
+  <!-- Dashboard sub-items -->
+  <rect x="120" y="525" width="140" height="45" rx="6" fill="#166534" fill-opacity="0.3" stroke="#166534" stroke-width="1"/>
+  <text x="190" y="545" text-anchor="middle" fill="#86efac" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="500">Executive Overview</text>
+  <text x="190" y="560" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">KPIs, Pareto, Trends</text>
+  
+  <rect x="280" y="525" width="140" height="45" rx="6" fill="#166534" fill-opacity="0.3" stroke="#166534" stroke-width="1"/>
+  <text x="350" y="545" text-anchor="middle" fill="#86efac" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="500">Vision Lab</text>
+  <text x="350" y="560" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">Image Inference &lt;2s</text>
+  
+  <rect x="440" y="525" width="140" height="45" rx="6" fill="#0891b2" fill-opacity="0.3" stroke="#0891b2" stroke-width="1"/>
+  <text x="510" y="545" text-anchor="middle" fill="#67e8f9" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="500">About</text>
+  <text x="510" y="560" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="9">Documentation</text>
+</svg>

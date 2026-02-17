@@ -4,8 +4,8 @@
 
 ## Overview
 
-In this guide, we will perform  multiclass defect detection on PCB images using distributed PyTorch training across multiple nodes and workers within a Snowflake Notebook. This guide utilizes a pre-trained Faster R-CNN model with ResNet50 as the backbone from PyTorch, fine-tuned for the task. The trained model is logged in the Snowpark Model Registry for future use. Additionally, a Streamlit app is developed to enable real-time defect detection on new images, making inference accessible and user-friendly
+In this guide, we will perform multiclass defect detection on PCB images using distributed PyTorch training across multiple GPU nodes within a Snowflake Notebook. This guide utilizes YOLOv12, a state-of-the-art object detection model, fine-tuned on the Deep PCB dataset to detect 6 defect types (open, short, mousebite, spur, copper, pin-hole). The trained model is logged in the Snowflake Model Registry for SQL-based inference. Additionally, a Streamlit app provides an interactive dashboard for defect analytics and image analysis with bounding box visualization.
 
 ## Step-By-Step Guide
 
-For prerequisites, environment setup, step-by-step guide and instructions, please refer to the [QuickStart Guide](https://quickstarts.snowflake.com/guide/defect_detection_using_distributed_pyTorch_with_snowflake_notebooks/index.html?index=..%2F..index#0).
+For prerequisites, environment setup, step-by-step guide and instructions, please refer to the [Developers Guide]().
